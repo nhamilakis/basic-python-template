@@ -1,0 +1,33 @@
+_default:
+  @just --choose
+
+[doc("Install module & dependencies")]
+install-dev:
+    pip install -e ".[dev]"
+    mypy --install-types
+
+
+[doc("Run Jupyter Server Locally")]
+run-notebook:
+    jupyter lab
+
+[doc("Check Syntax (RUFF)")]
+syntax-check:
+    ruff check
+
+[doc("Check Typing (mypy)")]
+type-check:
+    mypy lexical_benchmark
+
+[doc("Auto Formatting (RUFF)")]
+format:
+    ruff format lexical_benchmark
+
+[doc("Commit and push all changes")]
+commit-push message="":
+    git commit {{ if message != "" { "-m " + message } else {""} }}
+    git push
+
+[doc("Update git remote")]
+update-remote url:
+    git remote set-url origin {{url}}

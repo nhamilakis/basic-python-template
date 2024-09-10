@@ -1,0 +1,25 @@
+# questions
+project_name:
+    type: str
+    help: What is your project name?
+
+module_name:
+    type: str
+    help: What is your Main Python module name?
+
+description:
+    type: str
+    help: Do a brief description.
+
+creator:
+    type: str
+    help: What is your full-name?
+
+email:
+    type: str
+    help: What is your email ?
+
+python:
+    type: str
+    help: "What is the minimum python version supported (default: 3.10)?"
+
