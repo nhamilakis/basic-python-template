@@ -4,8 +4,6 @@ _default:
 [doc("Install module & dependencies")]
 install-dev:
     pip install -e ".[dev]"
-    mypy --install-types
-
 
 [doc("Run Jupyter Server Locally")]
 run-notebook:
@@ -17,11 +15,15 @@ syntax-check:
 
 [doc("Check Typing (mypy)")]
 type-check:
-    mypy lexical_benchmark
+    mypy src/
+
+[doc("Install extra-types")]
+types-install:
+    mypy --install-types
 
 [doc("Auto Formatting (RUFF)")]
 format:
-    ruff format lexical_benchmark
+    ruff format src/
 
 [doc("Commit and push all changes")]
 commit-push message="":
